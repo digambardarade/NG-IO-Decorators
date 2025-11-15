@@ -1,0 +1,23 @@
+<div class="col-md-12 bg-light">
+    <div class="row">
+        <app-navbar></app-navbar>
+        <div class="col-md-5">
+            <app-todo-form
+                [todo]="editIndex !== null ? todos[editIndex] : null"
+                [isEdit]="editIndex !== null"
+                (addTodo)="handleAddTodo($event)"
+                (cancelEdit)="handleCancelEdit()"
+            ></app-todo-form>
+        </div>
+        <div class="col-md-6 offset-md-1">
+            <app-todo-list
+                [todos]="todos"
+                (editTodo)="handleEditTodo($event)"
+                (removeTodo)="handleRemoveTodo($event)"
+                (toggleStatus)="handleToggleStatus($event)"
+            ></app-todo-list>
+        </div>
+        
+    </div>
+    
+</div>
