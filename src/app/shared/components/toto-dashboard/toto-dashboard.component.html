@@ -1,6 +1,9 @@
 <div class="col-md-12 bg-light">
     <div class="row">
-        <app-navbar></app-navbar>
+        <div class="col-md-12">
+            <app-navbar></app-navbar>
+        </div>
+        
         <div class="col-md-5">
             <app-todo-form
                 [todo]="editIndex !== null ? todos[editIndex] : null"
