@@ -10,6 +10,7 @@ export class TodoFormComponent implements OnInit, OnChanges {
   @Input() todo: Todo | null = null;
   @Input() isEdit: boolean = false;
   @Output() addTodo = new EventEmitter<Todo>();
+  @Output() updateTodo = new EventEmitter<Todo>();
   @Output() cancelEdit = new EventEmitter<void>();
   newItem: string = '';
 
@@ -27,7 +28,14 @@ export class TodoFormComponent implements OnInit, OnChanges {
 
   onAddTodo() {
     if (this.newItem.trim()) {
-      this.addTodo.emit({ item: this.newItem, status: this.todo?.status ?? false });
+      this.addTodo.emit({ item: this.newItem, status: false });
+      this.newItem = '';
+    }
+  }
+
+  onUpdateTodo() {
+    if (this.newItem.trim() && this.todo) {
+      this.updateTodo.emit({ ...this.todo, item: this.newItem });
       this.newItem = '';
     }
   }

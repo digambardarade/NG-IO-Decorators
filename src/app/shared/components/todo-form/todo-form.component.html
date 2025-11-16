@@ -7,8 +7,8 @@
         <label for="inputTodoItem mb-2"> Item:</label>
                 <input type="text" class="form-control mb-2" id="inputTodoItem" placeholder="Enter to-do item here.." [(ngModel)]="newItem">
                 <ng-container *ngIf="isEdit; else addMode">
-                    <button class="btn btn-sm btn-success w-50 me-1" (click)="onAddTodo()">Update</button>
-                    <button class="btn btn-sm btn-secondary w-50" (click)="onCancelEdit()">Cancel</button>
+                    <button class="btn btn-sm btn-success w-100 mb-2" (click)="onUpdateTodo()">Update</button>
+                    <button class="btn btn-sm btn-secondary w-100" (click)="onCancelEdit()">Cancel</button>
                 </ng-container>
                 <ng-template #addMode>
                     <button class="btn btn-sm btn-primary w-100" (click)="onAddTodo()">Add Todo</button>

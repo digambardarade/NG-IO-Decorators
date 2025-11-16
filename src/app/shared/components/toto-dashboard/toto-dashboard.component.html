@@ -4,7 +4,7 @@
             <app-navbar></app-navbar>
         </div>
         
-        <div class="col-md-5">
+        <div class="col-md-5 mb-4">
             <app-todo-form
                 [todo]="editIndex !== null ? todos[editIndex] : null"
                 [isEdit]="editIndex !== null"
@@ -12,6 +12,7 @@
                 (cancelEdit)="handleCancelEdit()"
             ></app-todo-form>
         </div>
+
         <div class="col-md-6 offset-md-1">
             <app-todo-list
                 [todos]="todos"
